@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import CharacterizationStructureTheoryMultivariateProbabilityTheoremCanonicalLaneLean.CharacterizationStructure
+import CharacterizationStructureTheoryMultivariateProbabilityTheoremCanonicalLaneLean.MultivariateConvergence
+import CharacterizationStructureTheoryMultivariateProbabilityTheoremCanonicalLaneLean.MartingaleBridge
+import CharacterizationStructureTheoryMultivariateProbabilityTheoremCanonicalLaneLean.StochasticCalculus
+import CharacterizationStructureTheoryMultivariateProbabilityTheoremCanonicalLaneLean.Ergodicity
+
+namespace HautevilleHouse
+namespace CharacterizationStructureTheoryMultivariateProbabilityTheoremCanonicalLaneLean
+
+def ConstrainedMultivariateProbabilityClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_multivariate_probability_endgame (A : AdmissibleClass) :
+    ConstrainedMultivariateProbabilityClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CharacterizationStructureTheoryMultivariateProbabilityTheoremCanonicalLaneLean
+end HautevilleHouse
